@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>SN College of Science</title>
+</head>
+<body>
+    <div class="container">
+        <header>SN COLLEGE OF SCIENCE - Application Form</header>
+
+        <form method="post" id="form">
+            <div class="section">
+                <span class="title">Course Details</span>
+                <div class="fields">
+                    <!-- Course Details Fields -->
+                    <div class="input-field">
+                        <label for="coursename">Course Name</label>
+                        <input type="text" id="coursename" placeholder="Enter course name" name="coursename" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="coursefee">Course Fee</label>
+                        <input type="text" id="coursefee" placeholder="Enter fee" name="coursefee" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="session">Session</label>
+                        <input type="text" id="session" placeholder="20_20_" name="session" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <span class="title">Personal Details</span>
+                <div class="fields">
+                    <!-- Personal Details Fields -->
+                    <div class="input-field">
+                        <label for="name">Candidate's Name</label>
+                        <input type="text" id="name" placeholder="Enter candidate's name" name="name" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option disabled selected>Select gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Others</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <label for="fname">Name of Father</label>
+                        <input type="text" id="fname" placeholder="Enter father's name" name="fname" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="focup">Father's Occupation</label>
+                        <input type="text" id="focup" placeholder="Enter father's occupation" name="focup" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="mname">Name of Mother</label>
+                        <input type="text" id="mname" placeholder="Enter mother's name" name="mname" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="aadhar">Aadhar Number</label>
+                        <input type="text" id="aadhar" placeholder="Enter Aadhar number" name="aadhar" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="photo">Candidate Photo</label>
+                        <input type="file" id="file2" accept="image/*">
+                    </div>
+                    <div class="input-field">
+                        <label for="signature">Candidate Signature</label>
+                        <input type="file" id="file1" accept="image/*">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <span class="title">Address</span>
+                <div class="fields">
+                    <!-- Address Fields -->
+                    <div class="input-field">
+                        <label for="comaddress">Complete Address</label>
+                        <textarea id="comaddress" placeholder="Enter complete address" name="comaddress" required></textarea>
+                    </div>
+                    <div class="input-field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter email" name="email" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="mobile">Mobile</label>
+                        <input type="text" id="mobile" placeholder="Enter mobile number" name="mobile" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <span class="title">Academic Details</span>
+                <div class="fields">
+                    <!-- Academic Details Fields -->
+                    <div class="input-field">
+                        <label for="y10">Year of Passing 10th</label>
+                        <input type="text" id="y10" placeholder="Enter year of passing 10th" name="y10" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="bu10">Board/Uni. Name (10th)</label>
+                        <input type="text" id="bu10" placeholder="Enter board/university name" name="bu10" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="p10">Percentage (10th)</label>
+                        <input type="text" id="p10" placeholder="Enter percentage" name="p10" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="y12">Year of Passing 12th</label>
+                        <input type="text" id="y12" placeholder="Enter year of passing 12th" name="y12" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="bu12">Board/Uni. Name (12th)</label>
+                        <input type="text" id="bu12" placeholder="Enter board/university name" name="bu12" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="p12">Percentage (12th)</label>
+                        <input type="text" id="p12" placeholder="Enter percentage" name="p12" required>
+                    </div>
+                </div>
+            </div>
+            <div id="res" style="color: green; font-size: 14px;"></div>
+            <div class="buttons">
+                <button type="submit" name="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+    
+  <script>
+    let url = "https://script.google.com/macros/s/AKfycbx8g4t5VRTwRnQgcpoacrhA0ibp4p7TEciq2tUuaN7w_OiZZHemVKlcJhE-FDyUbUSpqg/exec";
+
+let form = document.querySelector('#form');
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    e.target.btn.innerHTML = "Submitting....";
+    let d = new FormData(form);
+    let formData = {};
+    d.forEach((value, key) => formData[key] = value);
+    fetch(url, {
+        method: "POST",
+        body: JSON.stringify({ parameter: formData })
+    }).then((res) => res.text())
+    .then((finalRes) => {
+        e.target.btn.innerHTML = "submit";
+        document.getElementById("res").innerHTML = finalRes;
+        form.reset();
+        setTimeout(() => {
+            document.getElementById("res").innerHTML = '';
+        }, 2000);
+    });
+});
+
+function handleFileInput(fileInputId, imgId) {
+    let file = document.getElementById(fileInputId);
+    let img = document.getElementById(imgId);
+
+    file.addEventListener('change', () => {
+        let fr = new FileReader();
+        fr.addEventListener('loadend', () => {
+            let res = fr.result;
+            let spt = res.split("base64,")[1];
+            let obj = {
+                base64: spt,
+                type: file.files[0].type,
+                name: file.files[0].name
+            };
+            fetch(url, {
+                method: "POST",
+                body: JSON.stringify(obj)
+            })
+            .then(r => r.text())
+            .then(data => console.log(data));
+        });
+        fr.readAsDataURL(file.files[0]);
+    });
+}
+
+handleFileInput('file1', 'img1');
+handleFileInput('file2', 'img2');
+
+  </script>
+</body>
+</html>
